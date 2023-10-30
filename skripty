@@ -130,3 +130,18 @@ SUMX(
         ALL(data),
     data[rok] = SELECTEDVALUE(data[rok]) - 1),
 data[srazky])
+
+________________________________________________________________________________
+
+12 maximalni srazky v ruzyne v danem roce = 
+--krok4: Funkce MAXX() hleda maximum ve sloupci srazky
+-- tabulky vracene funkci FILTER()
+MAXX(
+--krok3: Funkce FILTER() vraci tabulku
+FILTER(
+-- krok1: Funkce FILTER() vytvari kopii tabulky data,
+-- respektuje filtry vizualu
+data,
+--krok2: Funkce FILTER() nastavuje filtr na sloupec lokalita
+data[lokalita] = "RUZYNE"),
+data[srazky])
