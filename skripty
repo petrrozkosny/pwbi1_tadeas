@@ -83,3 +83,10 @@ if(
         data[lokalita] = SELECTEDVALUE(data[lokalita])),
     data[srazky]),
     "red")
+
+______________________________________
+
+08 prumerne rocni srazky = 
+AVERAGEX(
+    ALL(data[rok]),
+    CALCULATE(SUM(data[srazky])))
