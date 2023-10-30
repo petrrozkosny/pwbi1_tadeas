@@ -115,3 +115,18 @@ SUMX(
     data[lokalita]  = "RUZYNE"
     && data[mesic] = 7),
 data[srazky])
+
+______________________________________________________________
+
+11 suma srazek mezirocne = 
+
+-- suma srazek v danem roce
+SUM(data[srazky])
+-- minus
+-
+-- suma srazek v predchozim roce
+SUMX(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok]) - 1),
+data[srazky])
