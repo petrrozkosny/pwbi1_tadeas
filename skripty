@@ -145,3 +145,11 @@ data,
 --krok2: Funkce FILTER() nastavuje filtr na sloupec lokalita
 data[lokalita] = "RUZYNE"),
 data[srazky])
+
+_________________________________________________________________________
+
+13 suma srazek kumulativne = 
+SUMX(
+    FILTER(ALL(data),
+    data[rok] <= SELECTEDVALUE(data[rok])),
+data[srazky])
