@@ -55,3 +55,31 @@ SUMX(
 data[srazky])
 
 _______________________________
+
+
+05 suma srazek mezirocne = 
+SUMX(
+FILTER(
+    ALL(data),
+data[rok] = SELECTEDVALUE(data[rok]) - 1
+&& data[lokalita] = SELECTEDVALUE(data[lokalita]))
+,data[srazky])
+
+___________________________________________________________
+
+06 maximalni srazky = MAX(data[srazky])
+
+___________________________________________________
+
+07 maximalni srazky = 
+
+if(
+    -- maximalni srazky v roce a lokalite
+    MAX(data[srazky])
+    =
+    MAXX(
+        FILTER(
+            ALL(data),
+        data[lokalita] = SELECTEDVALUE(data[lokalita])),
+    data[srazky]),
+    "red")
