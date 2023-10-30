@@ -173,3 +173,15 @@ MINX(
     -- maximu z maximalni teploty v danem roce
     MAX(data[maximalni_teplota])),
 data[datum])
+
+___________________________________________________
+
+15 pocet destivych dnu ruzyne = 
+-- v kolika datumech v danem roce v lokalite ruzyne 
+-- byly srazky >0
+
+COUNTX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"
+    && data[srazky] >0),
+data[datum])
