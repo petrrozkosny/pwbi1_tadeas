@@ -90,3 +90,18 @@ ______________________________________
 AVERAGEX(
     ALL(data[rok]),
     CALCULATE(SUM(data[srazky])))
+
+______________________________________________
+
+09 podil srazek ruzyne = 
+
+-- suma srazek v danem roce v lokalite ruzyne
+SUMX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"),
+data[srazky])
+-- deleno
+/
+-- suma srazek v danem roce 
+SUM(data[srazky])
+
