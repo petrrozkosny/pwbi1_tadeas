@@ -105,3 +105,13 @@ data[srazky])
 -- suma srazek v danem roce 
 SUM(data[srazky])
 
+________________________________________________________
+
+10 suma srazek ruzyne mesic 7 = 
+-- suma srazek v danem roce, lokalita ruzyne, mesic 7
+
+SUMX(
+    FILTER(data,
+    data[lokalita]  = "RUZYNE"
+    && data[mesic] = 7),
+data[srazky])
