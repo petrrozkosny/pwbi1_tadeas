@@ -153,3 +153,23 @@ SUMX(
     FILTER(ALL(data),
     data[rok] <= SELECTEDVALUE(data[rok])),
 data[srazky])
+
+
+____________________________________________________
+
+
+14 den maximalni teploty = 
+
+-- prvni (minimalni) datum maximalni teploty
+
+-- minimalni hodnota sloupce datum z tabulky vracene funkci filter(),
+
+MINX(
+    FILTER(
+    -- kopie tabulky data, respektuji filtr roku
+    data,
+    -- nastavuji filtr na sloupec maximalni_teplota
+    data[maximalni_teplota] = 
+    -- maximu z maximalni teploty v danem roce
+    MAX(data[maximalni_teplota])),
+data[datum])
