@@ -200,3 +200,12 @@ data[maximalni_teplota])
 =
 -- maximalni teplota v danem roce, vsechny lokality
 MAX(data[maximalni_teplota]),"ANO","NE")
+________________________________________
+
+17 pocet tropickych dnu ruzyne = 
+-- maximalni_teplota >=30
+COUNTX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"
+    && data[maximalni_teplota] >=30),
+data[datum])
