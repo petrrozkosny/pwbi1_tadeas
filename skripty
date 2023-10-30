@@ -209,3 +209,14 @@ COUNTX(
     data[lokalita] = "RUZYNE"
     && data[maximalni_teplota] >=30),
 data[datum])
+
+________________________________________________________
+
+18 pocet tropickych dnu = 
+-- pocet datumu kdy maximalni_teplota >=30
+
+COUNTX(
+    FILTER(
+    data,
+    data[maximalni_teplota] >=30),
+data[datum])
