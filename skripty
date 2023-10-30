@@ -185,3 +185,18 @@ COUNTX(
     data[lokalita] = "RUZYNE"
     && data[srazky] >0),
 data[datum])
+
+________________________________________
+
+16 byla ruzyne nejteplejsi lokalita = 
+
+-- ano / ne
+IF(
+-- maximalni teplota v danem roce v ruzyne
+MAXX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"),
+data[maximalni_teplota])
+=
+-- maximalni teplota v danem roce, vsechny lokality
+MAX(data[maximalni_teplota]),"ANO","NE")
