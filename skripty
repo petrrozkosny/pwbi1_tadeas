@@ -342,3 +342,11 @@ CALCULATE(
     SUM(data[srazky]),
     DATEADD(data[datum],-1,MONTH)
 )
+_________________________________________
+
+29 pf maximalni teplota = 
+
+IF(
+    -- maximalni teplota v danem roce
+    MAX(data[maximalni_teplota])
+    > 37,"green")
