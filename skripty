@@ -350,3 +350,13 @@ IF(
     -- maximalni teplota v danem roce
     MAX(data[maximalni_teplota])
     > 37,"green")
+
+___________________________________
+
+30 nazev grafu = 
+
+"Vývoj maximální teploty v lokalitách "
+&
+CONCATENATEX(
+    DISTINCT(data[lokalita]),
+    data[lokalita],", ")
