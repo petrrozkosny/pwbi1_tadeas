@@ -279,3 +279,16 @@ data[maximalni_teplota])
 -- maximalni teplota v danem roce, mesici
 MAX(data[maximalni_teplota]),
 "ANO","NE")
+
+______________________________________
+
+25 kumulativni srazky ruzyne = 
+-- kumulativni srazky v danem roce v lokalite ruzyne
+
+SUMX(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok])
+    && data[mesic] <= SELECTEDVALUE(data[mesic])
+    && data[lokalita] = "RUZYNE"),
+data[srazky])
