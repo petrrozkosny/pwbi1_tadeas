@@ -302,3 +302,16 @@ SUMX(
     FILTER(data,
     data[lokalita] IN {"RUZYNE","TURANY","MOSNOV"}),
 data[srazky])
+______________________________________________
+
+27 datum maximalni teploty v ruzyni = 
+-- minimalni datum maximalni teploty v ruzyni v danem roce, mesici
+MINX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"
+    && data[maximalni_teplota] = 
+        MAXX(
+            FILTER(data,
+            data[lokalita] = "RUZYNE"),
+        data[maximalni_teplota])),
+        data[datum])
