@@ -220,3 +220,12 @@ COUNTX(
     data,
     data[maximalni_teplota] >=30),
 data[datum])
+
+_________________________________________
+
+19 suma srazek kosice = 
+
+SUMX(
+    FILTER(data,
+    data[lokalita] = "KOSICE"),
+data[srazky])
