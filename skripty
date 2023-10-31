@@ -253,3 +253,13 @@ COUNTX(
     data[lokalita] = "RUZYNE"
     && data[srazky] >10),
 data[datum])
+__________________________________________
+
+23 maximalni teplota ruzyne = 
+-- v danem mesici, roce
+-- maximum z maximalni_teplota
+
+MAXX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"),
+data[maximalni_teplota])
