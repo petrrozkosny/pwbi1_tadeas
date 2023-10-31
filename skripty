@@ -263,3 +263,19 @@ MAXX(
     FILTER(data,
     data[lokalita] = "RUZYNE"),
 data[maximalni_teplota])
+
+________________________________________
+
+24 byla ruzyne nejteplejsi lokalitou = 
+-- v danem mesici a roce
+-- ano/ne
+IF(
+-- maximalni teplota v danem roce, mesici,ruzyne
+MAXX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"),
+data[maximalni_teplota])
+=
+-- maximalni teplota v danem roce, mesici
+MAX(data[maximalni_teplota]),
+"ANO","NE")
