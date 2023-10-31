@@ -374,3 +374,16 @@ AVERAGEX(
 CALCULATE(AVERAGE(data[maximalni_teplota])))
 return
 if(prumerna_teplota >= prumer_roky,"gold")
+
+______________________________________________
+
+
+32 podil srazek na celku = 
+
+-- suma srazek ve vybranem roce
+SUM(data[srazky])
+/
+-- suma srazek za vsechny roky 
+SUMX(
+    ALL(data),
+data[srazky])
