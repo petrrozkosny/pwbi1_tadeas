@@ -360,3 +360,17 @@ ___________________________________
 CONCATENATEX(
     DISTINCT(data[lokalita]),
     data[lokalita],", ")
+___________________________________________________
+
+31 kontrolo teploty = 
+
+VAR prumerna_teplota = AVERAGE(data[maximalni_teplota])
+
+
+VAR prumer_roky = 
+
+AVERAGEX(
+    ALL(data[rok]),
+CALCULATE(AVERAGE(data[maximalni_teplota])))
+return
+if(prumerna_teplota >= prumer_roky,"gold")
