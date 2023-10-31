@@ -327,3 +327,18 @@ MAXX(
     data[mesic] IN mesice),
 data[maximalni_teplota])
 
+_______________________________________________________
+
+suma srazek predchozi mesic = 
+
+// SUMX(
+//     FILTER(
+//         ALL(data),
+//     data[datum] >= EOMONTH(MIN(data[datum]),-2)+1
+//     && data[datum] <=EOMONTH(MIN(data[datum]),-1))
+// ,data[srazky])
+
+CALCULATE(
+    SUM(data[srazky]),
+    DATEADD(data[datum],-1,MONTH)
+)
