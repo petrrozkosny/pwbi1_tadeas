@@ -315,3 +315,15 @@ MINX(
             data[lokalita] = "RUZYNE"),
         data[maximalni_teplota])),
         data[datum])
+
+_____________________________________________________
+
+28 maximalni teplota mesice =
+
+VAR mesice = {1,3,2}
+RETURN
+MAXX(
+    FILTER(data,
+    data[mesic] IN mesice),
+data[maximalni_teplota])
+
