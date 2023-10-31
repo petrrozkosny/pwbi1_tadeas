@@ -292,3 +292,13 @@ SUMX(
     && data[mesic] <= SELECTEDVALUE(data[mesic])
     && data[lokalita] = "RUZYNE"),
 data[srazky])
+_____________________________________________________
+
+26 suma srazek vybrane lokality =
+-- RUZYNE, MOSNOV, TURANY
+-- v danem roce, mesici
+-- znak pro nebo ||
+SUMX(
+    FILTER(data,
+    data[lokalita] IN {"RUZYNE","TURANY","MOSNOV"}),
+data[srazky])
