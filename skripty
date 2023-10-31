@@ -229,3 +229,16 @@ SUMX(
     FILTER(data,
     data[lokalita] = "KOSICE"),
 data[srazky])
+
+_________________________________________
+
+20 suma srazek predchozi rok = 
+-- ve stejnem mesici
+SUMX(
+    FILTER(
+    -- tabulka
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok]) - 1
+    && data[mesic] = SELECTEDVALUE(data[mesic])),
+    -- sloupec, ktery scitame
+data[srazky])
