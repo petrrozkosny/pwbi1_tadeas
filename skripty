@@ -242,3 +242,14 @@ SUMX(
     && data[mesic] = SELECTEDVALUE(data[mesic])),
     -- sloupec, ktery scitame
 data[srazky])
+
+________________________________________
+
+
+22 pocet datumu se srazkami vice 10 v ruzyne = 
+-- v danem mesici, v danem roce
+COUNTX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"
+    && data[srazky] >10),
+data[datum])
